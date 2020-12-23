@@ -31,6 +31,7 @@ export async function estimate() {
 
   if (estimator) {
     await estimator.estimate(bitmap);
+    bitmap.close();
   }
 
   if (statsRef) statsRef.update();
