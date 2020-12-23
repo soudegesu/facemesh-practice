@@ -2,10 +2,12 @@ import { Box, Grid } from '@material-ui/core';
 import React, { FC } from 'react';
 import StartButton from '../components/StartButton';
 import InputVideoStream from '../components/InputVideoStream';
+import StatsPanel from '../components/StatsPanel';
 
 const TopPage: FC = () => {
   return (
     <Box paddingTop={10}>
+      <StatsPanel />
       <Grid container>
         <Grid item>
           <InputVideoStream />
