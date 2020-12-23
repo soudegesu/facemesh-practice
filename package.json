@@ -4,10 +4,15 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.2",
+    "@tensorflow-models/face-landmarks-detection": "0.0.2",
+    "@tensorflow/tfjs-backend-webgl": "^2.7.0",
+    "@tensorflow/tfjs-converter": "^2.7.0",
+    "@tensorflow/tfjs-core": "^2.7.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
     "recoil": "^0.1.2",
+    "three": "^0.123.0",
     "web-vitals": "^0.2.4"
   },
   "devDependencies": {
