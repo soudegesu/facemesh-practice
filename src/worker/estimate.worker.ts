@@ -18,7 +18,7 @@ export class Estimator {
     })();
   }
 
-  async estimate(bitmap: ImageBitmap) {
+  async estimate({ bitmap }: { bitmap: ImageBitmap }) {
     if (!this._landmarkMode) {
       console.log('Landmark model is not loaded yet.');
       return;

@@ -2,6 +2,7 @@
 import Worker from 'comlink-loader!../worker/estimate.worker';
 import Stats from 'three/examples/jsm/libs/stats.module';
 import { Estimator } from './estimate.worker';
+import { transfer } from 'comlink';
 
 let rafId = 0;
 let statsRef: Stats;
@@ -30,7 +31,7 @@ export async function estimate() {
   const bitmap = await videoCapturere.grabFrame();
 
   if (estimator) {
-    await estimator.estimate(bitmap);
+    await estimator.estimate(transfer({ bitmap }, [bitmap]));
     bitmap.close();
   }
 
