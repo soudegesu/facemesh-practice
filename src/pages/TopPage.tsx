@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import StartButton from '../components/StartButton';
 import InputVideoStream from '../components/InputVideoStream';
 import StatsPanel from '../components/StatsPanel';
+import InputCanvas from '../components/InputCanvas';
 
 const TopPage: FC = () => {
   return (
@@ -11,6 +12,9 @@ const TopPage: FC = () => {
       <Grid container>
         <Grid item>
           <InputVideoStream />
+        </Grid>
+        <Grid item>
+          <InputCanvas />
         </Grid>
       </Grid>
       <Box padding={1}>

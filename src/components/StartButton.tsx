@@ -26,10 +26,9 @@ const useStartButton = () => {
 
   const handleOnClick = async () => {
     const stream = await getUserMedia();
+    setInputMediaStream(stream);
     const [track] = stream.getVideoTracks();
     await track.applyConstraints(videoConstraints);
-    setInputMediaStream(stream);
-    await workerService?.addVideoTrack(track);
     await workerService?.start();
   };
 

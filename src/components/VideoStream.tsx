@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useRef } from 'react';
+import { useWorkerService } from '../provider/WorkerProvider';
 
 interface Props {
   stream?: MediaStream;
@@ -6,11 +7,13 @@ interface Props {
 
 const VideoStream: FC<Props> = ({ stream }) => {
   const videoPlayerRef = useRef<HTMLVideoElement | null>(null);
+  const { workerService } = useWorkerService();
 
   useEffect(() => {
     if (videoPlayerRef && videoPlayerRef.current && stream) {
       videoPlayerRef.current.srcObject = stream;
       videoPlayerRef.current.play();
+      workerService?.setVideo(videoPlayerRef.current);
     }
   }, [videoPlayerRef.current, stream]);
 
