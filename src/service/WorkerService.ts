@@ -20,12 +20,18 @@ export class WorkerService {
     const constraints = track.getConstraints();
     const width = constraints.width;
     const height = constraints.height;
+    console.time('Call createEstimator from main thread');
     await this._worker.createEstimator({ width, height });
+    console.timeEnd('Call createEstimator from main thread');
+    console.time('Call setCaputurere from main thread');
     await this._worker.setCaputurere(proxy({ capturere }));
+    console.timeEnd('Call setCaputurere from main thread');
   }
 
   async start() {
+    console.time('Call start from main thread');
     await this._worker.start(proxy(this._stats));
+    console.timeEnd('Call start from main thread');
   }
 
   getStats() {
